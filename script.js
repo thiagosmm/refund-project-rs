@@ -3,6 +3,7 @@ const form = document.querySelector("form")
 const amount = document.getElementById("amount")
 const expense = document.getElementById("expense")
 const category = document.getElementById("category")
+const list_expenses = document.querySelector("ul")
 
 
 //input value to accept digits only
@@ -37,5 +38,22 @@ form.onsubmit = (event) => {
     category_name: category.options[category.selectedIndex].text,
     amount: amount.value,
     created_at: new Date(),
+  }
+
+  addExpense(newExpense)
+}
+
+function addExpense(newExpense) {
+  try {
+
+    //li creation
+    const expenseItem = document.createElement("li")
+    expenseItem.classList.add("expense")
+
+
+
+  } catch (error) {
+    alert("Não foi possível atualizar a lista de despesas")
+    console.log(error)
   }
 }
