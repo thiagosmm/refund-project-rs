@@ -56,8 +56,34 @@ function addExpense(newExpense) {
     expenseIcon.setAttribute("src", `img/${newExpense.category_id}.svg`)
     expenseIcon.setAttribute("alt", newExpense.category_name)
 
+    //creating expense info
+    const expenseInfo = document.createElement("div")
+    expenseInfo.classList.add("expense-info")
+
+    //creating expense name
+    const expenseName = document.createElement("strong")
+    expenseName.textContent = newExpense.expense
+    //creating expense category
+    const expenseCategory = document.createElement("span")
+    expenseCategory.textContent = newExpense.category_name
+    //adding infos into expense info
+    expenseInfo.append(expenseName)
+    expenseInfo.append(expenseCategory)
+
+    //creating expense value
+    const expenseAmount = document.createElement("span")
+    expenseAmount.classList.add("expense-amount")
+    expenseAmount.innerHTML = `<small>R$</small>${newExpense.amount.toUpperCase().replace("R$", "")}`
+
+    //creating delete expense icon
+    const expenseDeleteIcon = document.createElement("img")
+    expenseDeleteIcon.classList.add("remove-icon")
+    expenseDeleteIcon.setAttribute("src", "img/remove.svg")
+
     //adds infos into item
-    expenseItem.append(expenseIcon)
+    expenseItem.append(expenseIcon, expenseInfo, expenseAmount, expenseDeleteIcon)
+
+
     list_expenses.append(expenseItem)
 
 
