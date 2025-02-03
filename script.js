@@ -1,5 +1,9 @@
 //select forms elements
+const form = document.querySelector("form")
 const amount = document.getElementById("amount")
+const expense = document.getElementById("expense")
+const category = document.getElementById("category")
+
 
 //input value to accept digits only
 amount.oninput = () => {
@@ -19,4 +23,19 @@ function formatCurrencyBRL(value) {
   })
 
   return value
+}
+
+//capture form submit event 
+form.onsubmit = (event) => {
+  event.preventDefault()
+
+  //new expense object
+  const newExpense = {
+    id: new Date().getTime(),
+    expense: expense.value,
+    category_id: category.value,
+    category_name: category.options[category.selectedIndex].text,
+    amount: amount.value,
+    created_at: new Date(),
+  }
 }
