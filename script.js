@@ -6,6 +6,8 @@ const category = document.getElementById("category")
 
 //select list elements
 const list_expenses = document.querySelector("ul")
+const expensesQuantity = document.querySelector("aside header p span")
+const expensesTotal = document.querySelector("aside header h2")
 
 //input value to accept digits only
 amount.oninput = () => {
@@ -44,6 +46,7 @@ form.onsubmit = (event) => {
   addExpense(newExpense)
 }
 
+//adds new li to ul
 function addExpense(newExpense) {
   try {
 
@@ -83,16 +86,47 @@ function addExpense(newExpense) {
     //adds infos into item
     expenseItem.append(expenseIcon, expenseInfo, expenseAmount, expenseDeleteIcon)
 
-
+    //adds item to the list
     list_expenses.append(expenseItem)
 
-
-
-
-
+    updateTotals()
 
   } catch (error) {
     alert("Não foi possível atualizar a lista de despesas")
+    console.log(error)
+  }
+}
+
+//update totals
+function updateTotals() {
+  try {
+
+    //updating number of items
+    const items_list = list_expenses.children
+    expensesQuantity.textContent = `${items_list.length} ${items_list.length > 1 ||  items_list.length === 0 ? "despesas" : "despesa"}`
+
+    //updating total of expenses
+    let total = 0
+    for(let item = 0; item < items_list.length; item++) {
+      const itemAmount = items_list[item].querySelector(".expense-amount")
+
+      let value = itemAmount.textContent.replace(/[^\d,]/g, "").replace(",", ".")
+
+      value = parseFloat(value)
+      total += Number(value)
+    }
+
+    // expensesTotal.textContent = formatCurrencyBRL(total)
+    const symbolBRL = document.createElement("small")
+    symbolBRL.textContent = "R$"
+    total = formatCurrencyBRL(total).toUpperCase().replace("R$", "")
+
+    //clean element content
+    expensesTotal.innerHTML = ""
+    expensesTotal.append(symbolBRL, total)
+    
+  } catch (error) {
+    alert("Não foi possível atualizar os totais")
     console.log(error)
   }
 }
