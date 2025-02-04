@@ -135,8 +135,10 @@ function updateTotals() {
 list_expenses.addEventListener("click", function(event){
   //verify if clicked event is the delete icon
   if(event.target.classList.contains("remove-icon")) {
-    console.log(event)
+    //capturing the closest .expense from the target clicked, which is the li
+    const item = event.target.closest(".expense")
+    item.remove()
   }
 
-  
+  updateTotals()
 })
