@@ -88,7 +88,7 @@ function addExpense(newExpense) {
 
     //adds item to the list
     list_expenses.append(expenseItem)
-    
+
     formClear()
     updateTotals()
 
@@ -149,4 +149,6 @@ function formClear() {
   amount.value = ""
   expense.value = ""
   category.value = ""
+
+  expense.focus()
 }
