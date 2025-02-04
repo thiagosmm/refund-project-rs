@@ -130,3 +130,13 @@ function updateTotals() {
     console.log(error)
   }
 }
+
+//event that captures click on list items
+list_expenses.addEventListener("click", function(event){
+  //verify if clicked event is the delete icon
+  if(event.target.classList.contains("remove-icon")) {
+    console.log(event)
+  }
+
+  
+})
