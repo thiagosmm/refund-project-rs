@@ -88,7 +88,8 @@ function addExpense(newExpense) {
 
     //adds item to the list
     list_expenses.append(expenseItem)
-
+    
+    formClear()
     updateTotals()
 
   } catch (error) {
@@ -142,3 +143,10 @@ list_expenses.addEventListener("click", function(event){
 
   updateTotals()
 })
+
+//clean input fields after submitting
+function formClear() {
+  amount.value = ""
+  expense.value = ""
+  category.value = ""
+}
