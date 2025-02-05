@@ -1,4 +1,4 @@
-# Expense Tracker 💰  (Study project)
+# Refund Project
 
 This project is an **expense tracker** built with **HTML, CSS, and JavaScript**. It allows users to dynamically add, view, and remove expenses. This is a [Rocketseat](https://www.rocketseat.com.br/?utm_source=google&utm_medium=cpc&utm_campaign=lead&utm_term=perpetuo&utm_content=institucional-lead-home-texto-lead-brandkws-none-none-institucional-none-none-br-google&gad_source=1&gclid=CjwKCAiAtYy9BhBcEiwANWQQL_7PJhNk7vjUU2WS5edbdA0Q-JW-9ytiEHPkbCOhkU4Y2gnl6gjFZxoCVxgQAvD_BwE) study project.
 
