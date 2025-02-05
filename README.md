@@ -18,8 +18,7 @@ This project is an **expense tracker** built with **HTML, CSS, and JavaScript**.
 
 ### 🎨 CSS  
 - **Responsive design** – Supports various screen sizes using media queries.  
-- **Custom input and button styling** – Well-styled form elements, buttons, and scrollbar.  
-- **Animations and transitions** – Visual effects on hover interactions.  
+- **Custom input and button styling** – Well-styled form elements, buttons, and scrollbar. 
 
 ### 📄 HTML  
 - **Semantic structure** – Uses proper tags for accessibility and content organization.  
